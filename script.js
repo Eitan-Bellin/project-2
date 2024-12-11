@@ -14,8 +14,8 @@ const products = [
     { id: 12, name: "שולחן קקל ילדים", clientPrice: 480, costPrice: 150, image: "photos/product12.jpg" },
     { id: 13, name: "שולחן קקל", clientPrice: 850, costPrice: 355, image: "product3.jpg" },
     { id: 14, name: "שולחן קקל מונגש", clientPrice: 1000, costPrice: 420, image: "product3.jpg" },
-    { id: 15, name: "ספסל נדנדה", clientPrice: 1850, costPrice: 700, image: "product3.jpg" },
-    { id: 16, name: "שולחן קקל ששבש / דמקה", clientPrice: 950, costPrice: 450, image: "product3.jpg" },
+    { id: 15, name: "ספסל נדנדה", clientPrice: 1850, costPrice: 700, image: "photos/product15.jpg" },
+    { id: 16, name: "שולחן קקל ששבש / דמקה", clientPrice: 950, costPrice: 450, image: "photos/product16.jpg" },
 
 ];
 
