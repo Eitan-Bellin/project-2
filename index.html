@@ -5,24 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>חנות מוצרים</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* עיצוב קבוע עבור סל הקניות */
+        #cart-summary {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            max-height: 80%;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        #cart-summary h2 {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #cart-summary table {
+            width: 100%;
+        }
+
+        #cart-summary p {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        #cart-summary button {
+            background-color: #f44336;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cart-summary button:hover {
+            background-color: #d32f2f;
+        }
+
+        body {
+            margin-right: 340px; /* להתאמה לסל הקניות בצד ימין */
+        }
+    </style>
 </head>
 <body>
     <h1>ברוכים הבאים לחנות של אלי קסטיאלי</h1>
     <div id="product-list" class="product-list">
         <!-- מוצרים יתווספו דינמית -->
     </div>
-    <h2>סיכום הזמנות</h2>
+    
     <div id="cart-summary">
+        <h2>סיכום הזמנות</h2>
         <table>
             <thead>
                 <tr>
                     <th>מוצר</th>
-                    <th>מחיר ללקוח</th>
-                    <th>עלות גולמית</th>
+                    <th>מחיר</th>
                     <th>הסר</th>
                 </tr>
             </thead>
-            
             <tbody id="cart-items">
                 <!-- רשימת מוצרים שנבחרו -->
             </tbody>
@@ -30,6 +77,7 @@
         <p>סה"כ מחיר ללקוח: <span id="total-client-price">0</span> ש"ח</p>
         <p>סה"כ עלות גולמית: <span id="total-cost-price">0</span> ש"ח</p>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
