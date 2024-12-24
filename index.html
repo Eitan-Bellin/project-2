@@ -6,57 +6,97 @@
     <title>חנות מוצרים</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-    body {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0;
-    }
-
-    #product-list {
-        flex: 1;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 20px;
-    }
-
-    #cart-summary {
-        position: sticky;
-        top: 0;
-        width: 300px;
-        background-color: #f9f9f9;
-        border: 1px solid #ccc;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 15px;
-        border-radius: 10px;
-        margin: 10px;
-        height: fit-content;
-        overflow: auto;
-    }
-
-    @media (max-width: 900px) {
-        body {
-            flex-direction: column;
-        }
-
+        /* עיצוב קבוע עבור סל הקניות */
         #cart-summary {
-            position: relative;
-            width: 100%;
-            margin: 10px auto;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            max-height: 80%;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
         }
-    }
 
-    @media (max-width: 600px) {
-        #product-list {
-            grid-template-columns: 1fr;
+        #cart-summary h2 {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         #cart-summary table {
             width: 100%;
-            overflow-x: auto;
+            margin-top: 20px;
         }
-    }
-</style>
+
+        #cart-summary p {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        #cart-summary button {
+            background-color: #f44336;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cart-summary button:hover {
+            background-color: #d32f2f;
+        }
+
+        body {
+            margin-right: 340px; /* התאמה לסל הקניות בצד ימין */
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        .product button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <h1>ברוכים הבאים לחנות של אלי קסטיאלי</h1>
@@ -98,8 +138,11 @@
             { id: 11, name: "ספסל המתנה", clientPrice: 350, costPrice: 135, image: "photos/product11.jpg", colorPrice: 150 },
             { id: 12, name: "שולחן קקל ילדים", clientPrice: 480, costPrice: 150, image: "photos/product12.jpg", colorPrice: 150 },
             { id: 13, name: "שולחן קקל", clientPrice: 850, costPrice: 355, image: "photos/product13.jpg", colorPrice: 200 },
-            { id: 14, name: "שולחן קקל מונגש", clientPrice: 1000, costPrice: 420, image: "photos/product14.jpg", colorPrice: 200 },
-            { id: 15, name: "ספסל נדנדה", clientPrice: 1850, costPrice: 700, image: "photos/product15.jpg", colorPrice: 300 }
+            { id: 14, name: "שולחן קקל מונגש", clientPrice: 1000, costPrice: 420, image: "photos/product19.jpg", colorPrice: 200 },
+            { id: 15, name: "ספסל נדנדה", clientPrice: 1850, costPrice: 700, image: "photos/product15.jpg", colorPrice: 300 },
+            { id: 16, name: "שולחן קקל שש בש / דמקה", clientPrice: 1000, costPrice: 420, image: "photos/product16.jpg", colorPrice: 200 },
+            { id: 17, name: "זולה מהודר יחיד", clientPrice: 450, costPrice: 150, image: "photos/product17.jpg", colorPrice: 200 },
+            { id: 18, name: "זולה מהודר זוגי", clientPrice: 520, costPrice: 220, image: "photos/product18.jpg", colorPrice: 200 },
         ];
 
         const productList = document.getElementById("product-list");
